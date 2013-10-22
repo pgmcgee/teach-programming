@@ -78,7 +78,8 @@ class Hero(Character):
         if not self._has_action:
             raise Exception("You don't have any actions left")
         pos = self._current_position
-        self._new_position(self._facing_position())
+        if self.feel() == 'empty':
+            self._new_position(self._facing_position())
         self._has_action = False
 
     def feel(self):
