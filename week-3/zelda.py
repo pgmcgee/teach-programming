@@ -158,13 +158,7 @@ class Hero(Character):
 
 class Player(Hero):
     def action(self):
-        if not self.has_plans():
-            self.plan([ self.right, self.forward ])
-        tiles = self.look()
-        if self.feel() == 'monster':
-            self.attack()
-        elif 'monster' in tiles:
-            self.forward()
+        pass
 
 class GameMap(object):
     _objects = []
